@@ -3,40 +3,41 @@ const downloadEle = document.getElementById("download-video")
 const data = []
 var mediaRecroder = null
 
-videoDemo.height = videoDemo.clientWidth * window.screen.height / window.screen.width
-window.onresize = () => {
-    videoDemo.height = videoDemo.clientWidth * window.screen.height / window.screen.width
-}
-
 const captureOptions = {
     video: {
         cursor: "always"
     },
-    audio: true
+    audio: {
+        echoCancellation: false,
+        noiseSuppression: false,
+        sampleRate: 48000
+    }
 }
 
 async function startRecord() {
     const captureStream = await navigator.mediaDevices.getDisplayMedia(captureOptions)
-    mediaRecroder = new MediaRecorder(captureStream, {audioBitsPerSecond: 256000}) //{audioBitsPerSecond: 256000, videoBitsPerSecond: 2500000}
+    mediaRecroder = new MediaRecorder(captureStream, {audioBitsPerSecond: 128_000, videoBitsPerSecond: 3_200_000, mimeType: "video/webm"})
 
     mediaRecroder.ondataavailable = e => data.push(e.data)
 
     mediaRecroder.onstop = () => {
-        const blob = new Blob(data, { type: "video/mp4" })
-
+        const blob = new Blob(data, { type: "video/webm" })
         const url = window.URL.createObjectURL(blob);
         downloadEle.href = url
-        downloadEle.download = "record.mp4"
+        downloadEle.download = `vCapture-${new Date().getTime().toString(16)}.webm`
         downloadEle.click()
         window.URL.revokeObjectURL(url);
+        data.length = 0
     }
     videoDemo.srcObject = captureStream
     mediaRecroder.start()
 }
 
 function stopRecord() {
-    const tracks = videoDemo.srcObject.getVideoTracks()
-    tracks.forEach(track => track.stop());
+    const vdTracks = videoDemo.srcObject.getVideoTracks() || []
+    const adTracks = videoDemo.srcObject.getAudioTracks()
+    vdTracks.forEach(track => track.stop())
+    adTracks.forEach(track => track.stop())
     videoDemo.srcObject = null;
 
     mediaRecroder.stop()
