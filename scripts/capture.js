@@ -42,12 +42,12 @@ loadMediaRecorder = captureStream => {
     mediaRecorder = new MediaRecorder(captureStream, CAPTURE_OPTIONS)
     mediaRecorder.ondataavailable = e => dataRecord.push(e.data)
     mediaRecorder.onstop = () => {
-        const blob = new Blob(dataRecord, { type: 'video/webm' })
+        const blob = new Blob(dataRecord, { type: 'video/mp4' })
         const url = window.URL.createObjectURL(blob);
         downloadEle.href = url
-        downloadEle.download = `vCapture-${new Date().getTime().toString(16)}.webm`
+        downloadEle.download = `vCapture-${new Date().getTime().toString(16)}.mp4`
         downloadEle.click()
-        window.URL.revokeObjectURL(url);
+        window.URL.revokeObjectURL(url)
     }
     mediaRecorder.start()
 }
