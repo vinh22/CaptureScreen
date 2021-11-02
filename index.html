@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quay phim màn hình | Trang chủ</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #777;">
+    <video id="video-demo" style="background-color: #222; border: 2px solid #aaa; float: left; box-sizing: border-box; width: 80%;" autoplay muted></video>
+    <div style="box-sizing: border-box; width: 20%; float: right;">
+        <button onclick="startRecord()">Quay màn hình</button>
+        <button onclick="stopRecord()">Dừng Quay</button>
+        <a id="download-video"></a>
+    </div>
+</body>
+<script src="./scripts/capture.js"></script>
+</html>
