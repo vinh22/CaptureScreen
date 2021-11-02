@@ -1,12 +1,12 @@
-const videoDemo = document.getElementById("video-demo")
-const downloadEle = document.getElementById("download-video")
-const data = []
-var mediaRecroder = null
+const videoDemo = document.getElementById('video-demo')
+const startRecordEle = document.getElementById('start-record')
+const stopRecordEle = document.getElementById('stop-record')
+const downloadEle = document.getElementById('download-video')
+const dataRecord = []
+var mediaRecorder
 
-const captureOptions = {
-    video: {
-        cursor: "always"
-    },
+const CAPTURE_OPTIONS = {
+    video: { cursor: 'always' },
     audio: {
         echoCancellation: false,
         noiseSuppression: false,
@@ -14,31 +14,61 @@ const captureOptions = {
     }
 }
 
-async function startRecord() {
-    const captureStream = await navigator.mediaDevices.getDisplayMedia(captureOptions)
-    mediaRecroder = new MediaRecorder(captureStream, {audioBitsPerSecond: 128_000, videoBitsPerSecond: 3_200_000, mimeType: "video/webm"})
+const MEDIA_RECORD_OPTIONS = {
+    audioBitsPerSecond: 128_000,
+    videoBitsPerSecond: 3_200_000,
+    mimeType: 'video/webm'
+}
 
-    mediaRecroder.ondataavailable = e => data.push(e.data)
+startRecordOnPress = async () => {
+    try {
+        const captureStream = await navigator.mediaDevices.getDisplayMedia(CAPTURE_OPTIONS)
+        loadMediaRecorder(captureStream)
+        videoDemo.srcObject = captureStream
+        captureStream.getVideoTracks()[0].addEventListener('ended', () => {
+            stopRecordOnPress()
+        })
+    } catch (error) {console.log(error)}
+    checkButton()
+}
 
-    mediaRecroder.onstop = () => {
-        const blob = new Blob(data, { type: "video/webm" })
+stopRecordOnPress = () => {
+    stopRecord()
+    mediaRecorder.stop()
+    checkButton()
+}
+
+loadMediaRecorder = captureStream => {
+    mediaRecorder = new MediaRecorder(captureStream, CAPTURE_OPTIONS)
+    mediaRecorder.ondataavailable = e => dataRecord.push(e.data)
+    mediaRecorder.onstop = () => {
+        const blob = new Blob(dataRecord, { type: 'video/webm' })
         const url = window.URL.createObjectURL(blob);
         downloadEle.href = url
         downloadEle.download = `vCapture-${new Date().getTime().toString(16)}.webm`
         downloadEle.click()
         window.URL.revokeObjectURL(url);
-        data.length = 0
     }
-    videoDemo.srcObject = captureStream
-    mediaRecroder.start()
+    mediaRecorder.start()
 }
 
-function stopRecord() {
+stopRecord = () => {
     const vdTracks = videoDemo.srcObject.getVideoTracks() || []
     const adTracks = videoDemo.srcObject.getAudioTracks()
     vdTracks.forEach(track => track.stop())
     adTracks.forEach(track => track.stop())
     videoDemo.srcObject = null;
-
-    mediaRecroder.stop()
+    dataRecord.length = 0
 }
+
+checkButton = () => {
+    if (mediaRecorder?.stream.active) {
+        startRecordEle.style.display = 'none'
+        stopRecordEle.style.display = 'block'
+    } else {
+        startRecordEle.style.display = 'block'
+        stopRecordEle.style.display = 'none'
+    }
+}
+
+checkButton()
