@@ -6,19 +6,19 @@
     <title>vHTML</title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <ul>
-        <li><a href="./screen-record/index.html">Quay phim màn hình desktop</a></li>
-        <li><a href="#">Làm đẹp json</a></li>
-    </ul>
-    <hr/>
-    <h1>Supprt Tester open app com.mutosi.shop</h1>
-    <ul>
-        <li>
-            <a href="https://firebase-mutosi.newweb.vn/?link=https://omni.mutosi.com?reference_code=0901234567&product_id=1370/&apn=com.mutosi.shop?reference_code=0901234567&product_id=1370&isi=1627311682&ibi=com.mutosi.shop?reference_code=0901234567&product_id=1370">
-                https://firebase-mutosi.newweb.vn/?link=https://omni.mutosi.com?reference_code=0901234567&product_id=1370/&apn=com.mutosi.shop?reference_code=0901234567&product_id=1370&isi=1627311682&ibi=com.mutosi.shop?reference_code=0901234567&product_id=1370
-            </a>
-        </li>
-    </ul>
+    <script>
+        
+        fuction onClickFromWeb(idProduct) {
+            try {
+                AddToCartMobile.postMessage(idProduct);
+            } catch (_) {}
+            console.log('>>>>>>>>>>>>>> ' + idProduct);
+        }
+        
+    </script>
+    
+    
+    <button on-click="onClickFromWeb(2929)"></button>
+    
 </body>
 </html>
