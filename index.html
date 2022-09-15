@@ -8,17 +8,19 @@
 </head>
 <body>
     
-    <img src="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"/>
+    <a href="https://vinhmdev.github.io/screen-record/">
+        Quay phim màn hình desktop
+    </a>
+    
+    
+    Product Id: <input id="product_id"/><br/>
+    Reference Code: <input id="reference_code"/><br/>
+    <button on-click="renderLink()">Render link</button>
     
     <script>
-        
-        function onClickFromWeb(idProduct) {
-            try {
-                AddToCartMobile.postMessage(idProduct);
-            } catch (_) {}
-            console.log('>>>>>>>>>>>>>> ' + idProduct);
+        function renderLink() {
+            console.log("hàng lậu")
         }
-        
     </script>
     
     <br/>
