@@ -33,7 +33,7 @@
             console.log(`product_id: ${productId} | reference_code: ${referenceCode}`)
             const aDoc = document.getElementById('link-render')
             const urlComp = encodeURIComponent(`https://vinhmdev.github.io?product_id=${productId}&reference_code=${referenceCode}`)
-            const linkRender = 'https://firebase-mutosi.newweb.vn/?link=${urlComp}&apn=com.mutosi.shop&afl=${urlComp}&isi=1627311682&ibi=com.mutosi.shop&ifl=${urlComp}'
+            const linkRender = `https://firebase-mutosi.newweb.vn/?link=${urlComp}&apn=com.mutosi.shop&afl=${urlComp}&isi=1627311682&ibi=com.mutosi.shop&ifl=${urlComp}`
             aDoc.innerHTML = linkRender
             aDoc.href = linkRender
         }
