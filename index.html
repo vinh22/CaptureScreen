@@ -32,7 +32,8 @@
             const referenceCode = document.getElementById('reference-code').value
             console.log(`product_id: ${productId} | reference_code: ${referenceCode}`)
             const aDoc = document.getElementById('link-render')
-            const linkRender = ``
+            const urlComp = encodeURIComponent(`https://vinhmdev.github.io?product_id=${productId}&reference_code=${referenceCode}`)
+            const linkRender = 'https://firebase-mutosi.newweb.vn/?link=${urlComp}&apn=com.mutosi.shop&afl=${urlComp}&isi=1627311682&ibi=com.mutosi.shop&ifl=${urlComp}'
             aDoc.innerHTML = linkRender
             aDoc.href = linkRender
         }
