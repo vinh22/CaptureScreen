@@ -16,20 +16,24 @@
     
     <br/>
     
-    Product Id: <input id="product_id"/><br/>
-    Reference Code: <input id="reference_code"/><br/>
+    Product Id: <input id="product-id"/><br/>
+    Reference Code: <input id="reference-code"/><br/>
     <button onclick="renderLink()">Render link</button>
+
+    <a id="link-render"/>
     
     <script>
         function renderLink() {
+            const productId = document.getElementById('product-id').value
+            const referenceCode = document.getElementById('reference-code').value
+            console.log(`product_id: ${productId} | reference_code: ${referenceCode}`)
+            const aDoc = document.getElementById('link-render')
+            const linkRender = ``
+            aDoc.innerHTML = linkRender
+            aDoc.href = linkRender
         }
     </script>
-    
-    <br/>
-    <br/>
-    <br/>
-    
-    <button onclick="onClickFromWeb(2929)">TEST</button>
+   
     
 </body>
 </html>
