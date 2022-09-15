@@ -25,6 +25,7 @@
     <a id="link-render"/>
     
     <hr/>
+    <h1><b>Web đã nhận được dữ liệu:</b> <h2 id="data-receive"></h2></h1>
     
     <script>
         function renderLink() {
@@ -37,6 +38,7 @@
             aDoc.innerHTML = linkRender
             aDoc.href = linkRender
         }
+        document.getElementById("data-receive").innerHTML = window.location.search
     </script>
    
     
