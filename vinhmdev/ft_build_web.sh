@@ -1,2 +1,2 @@
 flutter build web
-cp -rfv ./web/* ../
+cp -rfv ./build/web ../
