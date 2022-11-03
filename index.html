@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vinhmdev | Index</title>
+
+    <base href="/web/"/>
 </head>
 <body>
     <center>
-        <button 
-            onclick="window.location='/web'"
-            style="font-size: 24;"
-        >Ấn vào đây để tiếp tục</button>
+        <input
+            onclick="gotoWeb()"
+            style="font-size: 2rem; padding: 1em 2em; font-weight: bold;"
+            type="button"
+            value="Ấn vào đây để tiếp tục">
+        </input>
     </center>
     <script>
-        document.onload(() => {
-            window.location = '/web';
-        });
+        function gotoWeb() {
+            window.location = '/web/';
+        }
     </script>
 </body>
 </html>
