@@ -198,7 +198,7 @@
               return;
             } else if ("system_error" == response.status) {
               console.log("Session update failed with system error: " + response.errors.message);
-              FlutterError.postMessage('Lỗi phát sinh từ hệ thống: ' + response.errors.message);
+              FlutterError.postMessage('Sự cố phát sinh từ hệ thống: ' + response.errors.message);
               return;
             }
           } else {
