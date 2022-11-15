@@ -34,10 +34,10 @@
         function confirm() {
             try {
                 var obj = {
-                    "status": status,
+                    "status": payment,
                     "code": code,
                     "price": price,
-                    "payment": payment,
+                    "payment": status.replace('success', 'Thành công').replcate('fail', 'Thất bại'),
                     "orderId": orderId,
                 }
                 FlutterConfirm.postMessage(JSON.stringify(obj))
