@@ -37,7 +37,7 @@
                     "status": payment,
                     "code": code,
                     "price": price,
-                    "payment": status.replace('success', 'Thành công').replcate('fail', 'Thất bại'),
+                    "payment": status.replaceAll('success', 'Thành công').replaceAll('fail', 'Thất bại');,
                     "orderId": orderId,
                 }
                 FlutterConfirm.postMessage(JSON.stringify(obj))
