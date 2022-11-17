@@ -25,7 +25,7 @@
         var payment = url.searchParams.get('payment_method'); //
         var orderId = url.searchParams.get('order_id'); // 11323
 
-        document.getElementById('status').innerHTML += status;
+        document.getElementById('status').innerHTML += status.replaceAll('success', 'Thành công').replaceAll('fail', 'Thất bại');
         document.getElementById('code').innerHTML += code;
         document.getElementById('price').innerHTML += price;
         document.getElementById('payment').innerHTML += payment;
@@ -34,10 +34,10 @@
         function confirm() {
             try {
                 var obj = {
-                    "status": payment,
+                    "status": status.replaceAll('success', 'Thành công').replaceAll('fail', 'Thất bại'),
                     "code": code,
                     "price": price,
-                    "payment": status.replaceAll('success', 'Thành công').replaceAll('fail', 'Thất bại'),
+                    "payment": payment,
                     "orderId": orderId,
                 }
                 FlutterConfirm.postMessage(JSON.stringify(obj))
