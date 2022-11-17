@@ -19,7 +19,7 @@
     <script>
         var lo = document.location.toString(); // http://localhost:9815/flutter_assets/mastercard_callback.html?code=DH20221017009&price=20,040,000%C4%91&payment_method=Thanh%20to%C3%A1n%20qua%20th%E1%BA%BB%20t%C3%ADn%20d%E1%BB%A5ng/th%E1%BA%BB%20ghi%20n%E1%BB%A3%20qu%E1%BB%91c%20t%E1%BA%BF&order_id=11326&status=fail
         var url = new URL(lo)
-        var status = url.searchParams.get('status'); // fail
+        var status = url.searchParams.get('status').replaceAll('success', 'Thành công').replaceAll('fail', 'Thất bại'); // fail
         var code = url.searchParams.get('code'); // DH20221017006
         var price = url.searchParams.get('price'); // 10,040,000
         var payment = url.searchParams.get('payment_method'); //
@@ -37,7 +37,7 @@
                     "status": payment,
                     "code": code,
                     "price": price,
-                    "payment": status.replaceAll('success', 'Thành công').replaceAll('fail', 'Thất bại');,
+                    "payment": status.replaceAll('success', 'Thành công').replaceAll('fail', 'Thất bại'),
                     "orderId": orderId,
                 }
                 FlutterConfirm.postMessage(JSON.stringify(obj))
