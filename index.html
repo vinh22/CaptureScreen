@@ -4,22 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vinhmdev</title>
+
+    <meta property="og:url"content="https://vinhmdev.github.io" />
+    <meta property="og:title" content="Tiện ích cá nhân và những nghiên cứu" />
+    <meta property="og:description" content="Trang cá nhân của 'Vinh mDev', để hổ trợ công việc và thử nghiệm nhiều nội dung khác. Luôn luôn phát triển - không có điểm dừng và mục tiêu." />
+    <meta property="og:image" content="https://vinhmdev.github.io/assets/images/error.jpeg" />
+
+    <title>Vinh mDev | Tiện ích cá nhân</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            background-color: #0000;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+        img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        .next-link {
+            width: 100%;
+            max-width: 28rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 1px solid gray;
+            margin: 1rem auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column; 
+            border-radius: 4px;
+        }
+    </style>
 </head>
-<body>
-    <center>
-        <input
-            onclick="gotoWeb()"
-            style="font-size: 2rem; padding: 1em 2em; font-weight: bold;"
-            type="button"
-            value="Ấn vào đây để tiếp tục">
-        </input>
-    </center>
+<body> 
+    <a class="next-link" href="www/">
+        <div style="
+            padding: 1rem;
+            background-color: #ddd;
+            border-bottom: 1px solid gray;">
+            Dừng lại, sau đó ấn vào đây!
+        </div>
+        <img class="error-image" src="assets/images/error.jpeg">
+        <div style="
+            padding: 1rem;
+            font-size: 1rem;
+            border-top: 1px solid gray;
+            text-align: justify;">
+            Đây chỉ là trang web đơn giản để Vinh thử nghiệm, nghiên cứu. Trang web này không có giá trị xã hội.
+            <br/> Đã đến đây thì Vinh rất vui lòng nhận đóng góp của bạn, nếu bạn muốn source code hoặc góp code, vui lòng gửi mail về <u>mvinhle22@gmail.com</u>
+        </div>
+    </a>
     <script>
         function gotoWeb() {
-            window.location = '/www/';
+            window.location = 'www/';
         }
-        gotoWeb();
+        // gotoWeb();
     </script>
 </body>
 </html>
