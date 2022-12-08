@@ -10,7 +10,7 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "e5f198bab29058ab3ae3dee6f2162e62",
-"index.html": "63c9acf88615248ee6838eb577bc9e0a",
+"index.html": "c3fe758108e1ee8f2f683fe423824fa5",
 "/": "4d8e9af68c6eabf4f28ec0c09d507cdf",
 "main.dart.js": "6154ca0b020649c29f8bd6d6f3f5e75a",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
