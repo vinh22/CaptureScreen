@@ -15,7 +15,7 @@ const RESOURCES = {
 "addon/html-coverimage/images/megumin.jpg": "f525ef62e87bf9f9396e3abaf125955d",
 "addon/html-coverimage/images/megumin2.png": "d7d08106970dc08772884f848244d118",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"index.html": "70e95621e8d1fa5a32bd06538b9a2025",
+"index.html": "ba8c74d4c76007c6f808a54dc1a2a406",
 "work_tp/toplinksale/www/icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "work_tp/toplinksale/www/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "work_tp/toplinksale/www/icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
@@ -48,6 +48,7 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
 "canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
 "canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
+"wait.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/AssetManifest.json": "1f9dad880a9f15b670a5d91bbf6f1bb7",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
@@ -56,7 +57,7 @@ const RESOURCES = {
 "assets/assets/images/error.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/NOTICES": "72fa396b5dc31ff82a50b321782e2cfa",
-"main.dart.js": "34e806148e66b8b028a726fefc2c5552",
+"main.dart.js": "7c707570011f6726ddbab174b1a14670",
 "manifest.json": "e5f198bab29058ab3ae3dee6f2162e62"
 };
 
