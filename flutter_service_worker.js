@@ -15,7 +15,7 @@ const RESOURCES = {
 "addon/html-coverimage/images/megumin.jpg": "f525ef62e87bf9f9396e3abaf125955d",
 "addon/html-coverimage/images/megumin2.png": "d7d08106970dc08772884f848244d118",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"index.html": "a773bb119ef08ddb3453a9c95f6f0b18",
+"index.html": "84711d5dc778adb25580da32dc5c10c3",
 "work_tp/toplinksale/www/icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "work_tp/toplinksale/www/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "work_tp/toplinksale/www/icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
