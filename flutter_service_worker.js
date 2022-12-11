@@ -15,7 +15,7 @@ const RESOURCES = {
 "addon/html-coverimage/images/megumin.jpg": "f525ef62e87bf9f9396e3abaf125955d",
 "addon/html-coverimage/images/megumin2.png": "d7d08106970dc08772884f848244d118",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"index.html": "72b052a891839a962fd293b52bafcb0e",
+"index.html": "84711d5dc778adb25580da32dc5c10c3",
 "work_tp/toplinksale/www/icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "work_tp/toplinksale/www/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "work_tp/toplinksale/www/icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
@@ -56,8 +56,8 @@ const RESOURCES = {
 "assets/assets/json/configure.json": "d41d8cd98f00b204e9800998ecf8427e",
 "assets/assets/images/error.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/NOTICES": "72fa396b5dc31ff82a50b321782e2cfa",
-"main.dart.js": "b545cd33d30fd56ccec8d17a3e32ce06",
+"assets/NOTICES": "c11b3d0753dce536b2e1b121471c1454",
+"main.dart.js": "87e11fd6979602ae524075dea22dd796",
 "manifest.json": "4c233020f0e17529a41d9434233a8d93"
 };
 
