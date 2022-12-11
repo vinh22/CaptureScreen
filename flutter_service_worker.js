@@ -15,7 +15,7 @@ const RESOURCES = {
 "addon/html-coverimage/images/megumin.jpg": "f525ef62e87bf9f9396e3abaf125955d",
 "addon/html-coverimage/images/megumin2.png": "d7d08106970dc08772884f848244d118",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"index.html": "ba8c74d4c76007c6f808a54dc1a2a406",
+"index.html": "72b052a891839a962fd293b52bafcb0e",
 "work_tp/toplinksale/www/icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "work_tp/toplinksale/www/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "work_tp/toplinksale/www/icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
@@ -57,8 +57,8 @@ const RESOURCES = {
 "assets/assets/images/error.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/NOTICES": "72fa396b5dc31ff82a50b321782e2cfa",
-"main.dart.js": "7c707570011f6726ddbab174b1a14670",
-"manifest.json": "e5f198bab29058ab3ae3dee6f2162e62"
+"main.dart.js": "b545cd33d30fd56ccec8d17a3e32ce06",
+"manifest.json": "4c233020f0e17529a41d9434233a8d93"
 };
 
 // The application shell files that are downloaded before a service worker can
