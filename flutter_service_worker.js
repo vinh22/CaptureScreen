@@ -42,7 +42,7 @@ const RESOURCES = {
 "work_tp/mts/captchav3.html": "32f789047e53f9437a3b35cd13c372ac",
 "work_tp/mts/chat_bot.html": "ab1e4d8332fb06b3910957f92c9dc209",
 "work_tp/mts/mastercard_payment.html": "2ba7107bf2e573dacbe07f3b9361c50e",
-"firebase-messaging-sw.js.js": "a773bb119ef08ddb3453a9c95f6f0b18",
+"firebase-messaging-sw.js": "a773bb119ef08ddb3453a9c95f6f0b18",
 "version.json": "584e0b2fb16ae04941658488cfdc8dab",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
