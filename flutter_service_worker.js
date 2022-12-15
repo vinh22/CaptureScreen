@@ -37,6 +37,7 @@ const RESOURCES = {
 "work_tp/toplinksale/www/assets/NOTICES": "243c460924186536f983ca83ca68eff8",
 "work_tp/toplinksale/www/main.dart.js": "97a4a45ae314e21cb4c9579fb738d3b7",
 "work_tp/toplinksale/www/manifest.json": "1d21a390ac8efb04bb2c350761467514",
+"work_tp/toplinksale/map_index.html": "6760658049f7a6344e0c6119c0312309",
 "work_tp/mts/bank_callback.html": "8b1551cc220e9a3ba74c442432f57d7e",
 "work_tp/mts/captcha.html": "690b93cc380397b72b2a1163c4154e6c",
 "work_tp/mts/captchav3.html": "32f789047e53f9437a3b35cd13c372ac",
@@ -51,14 +52,16 @@ const RESOURCES = {
 "canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
 "wait.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
-"assets/AssetManifest.json": "1f9dad880a9f15b670a5d91bbf6f1bb7",
+"assets/AssetManifest.json": "08dc01e0ce7b237a4c5e19e9a7d4c560",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/shaders/ink_sparkle.frag": "4bf9c21bdd54a21ca371a65664b0e2c7",
+"assets/assets/fonts/CascadiaMonoPL.ttf": "ef6ad3147eb7345ef494203a0012679f",
+"assets/assets/fonts/CascadiaMonoPLItalic.ttf": "eb50f42ed424ae992b4ab84be47f1465",
 "assets/assets/json/configure.json": "d41d8cd98f00b204e9800998ecf8427e",
 "assets/assets/images/error.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
-"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/FontManifest.json": "376e180111b6fb6ddaf90cfa4f85f7bf",
 "assets/NOTICES": "c11b3d0753dce536b2e1b121471c1454",
-"main.dart.js": "fcd091750f354e11776c1c9208346879",
+"main.dart.js": "f014fdbee215f0c74b6bdf81cc3f6a7a",
 "manifest.json": "4c233020f0e17529a41d9434233a8d93"
 };
 
