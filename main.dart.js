@@ -87471,21 +87471,22 @@ q===$&&A.c()
 q=A.pH(q.a)
 p=n.a
 return"# >>> Status:\n"+s+" "+r+"\n\n# >>> Headers:\n"+A.k(q)+"\n\n# >>> Body:\n"+A.k(A.pH(p==null?"<Undefined>":p))},
-Ui(a,b){var s,r,q,p,o,n,m=null,l="<Nothing>",k=b==null?m:b.d
-if(k==null)return m
-s=k.ghb(k)
-r=k.b
-q=r==null
-if(q)p=m
-else{p=r.b
-p===$&&A.c()
-p=p.a}p=A.pH(p==null?l:p)
-o=q?m:r.d
-o=A.k(o==null?l:o)
-n=q?m:r.e
-if(n==null)n=l
-r=q?m:r.e
-return"# >>> Message:\n"+s+"\n\n# >>> Header:\n"+A.k(p)+"\n\n# >>> Status:\n"+o+" "+n+"\n\n# >>> Body:\n"+A.k(A.pH(r==null?l:r))},
+Ui(a,b){var s,r,q,p,o,n,m,l=null,k="<Nothing>",j=b==null?l:b.d
+if(j==null)return l
+s=j.j(0)
+r=j.ghb(j)
+q=j.b
+p=q==null
+if(p)o=l
+else{o=q.b
+o===$&&A.c()
+o=o.a}o=A.pH(o==null?k:o)
+n=p?l:q.d
+n=A.k(n==null?k:n)
+m=p?l:q.e
+if(m==null)m=k
+q=p?l:q.e
+return"# >>> Message:\n"+s+"\n"+r+"\n\n# >>> Header:\n"+A.k(o)+"\n\n# >>> Status:\n"+n+" "+m+"\n\n# >>> Body:\n"+A.k(A.pH(q==null?k:q))},
 H(a){var s,r,q=t.Lv
 A.iU(a,q)
 s=t.Co
