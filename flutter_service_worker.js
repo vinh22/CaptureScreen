@@ -93,8 +93,8 @@ const RESOURCES = {
 "assets/assets/images/icon_512.png": "03954ed06c3ab5d1b2f097877da16655",
 "assets/assets/images/error.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "assets/FontManifest.json": "376e180111b6fb6ddaf90cfa4f85f7bf",
-"assets/NOTICES": "72fa396b5dc31ff82a50b321782e2cfa",
-"main.dart.js": "9eb697733974354e27452c9697a071fc",
+"assets/NOTICES": "2accf74bb20865278a9cf501a591fc9c",
+"main.dart.js": "956ad1a1580eac56337789029052d91b",
 "manifest.json": "b4d0427c2130631de0726737852e00d2"
 };
 
