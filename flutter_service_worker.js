@@ -46,10 +46,11 @@ const RESOURCES = {
 "addon/html-coverimage/java-script/cover-images.js": "cb9f9e5cb114b2ddb70c65f6662cc932",
 "addon/html-coverimage/images/megumin.jpg": "f525ef62e87bf9f9396e3abaf125955d",
 "addon/html-coverimage/images/megumin2.png": "d7d08106970dc08772884f848244d118",
+"addon/qr.html": "69143c9c4083f57e2605ddde7c58da96",
 "addon/teser_gif/index.html": "734451f8a3d08944495516be414e8dbb",
 "addon/teser_gif/loading.gif": "7bb4affe0b1bfed78f954bf0fdd09559",
 "google037d31e3522b9d4c.html": "16c5187edf54736a63f53c4e6a5c9aa8",
-"index.html": "095a2498e5b43b25228954c655e6bc6f",
+"index.html": "2925ee0575405f17a2108a557a86edca",
 "work_tp/toplinksale/www/icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "work_tp/toplinksale/www/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "work_tp/toplinksale/www/icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
@@ -98,9 +99,9 @@ const RESOURCES = {
 "assets/assets/images/error.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "assets/assets/images/loading.gif": "4e80f86919b04422d853db8acd99a063",
 "assets/FontManifest.json": "376e180111b6fb6ddaf90cfa4f85f7bf",
-"assets/NOTICES": "888a97465d14fa368885b7dea7c92c32",
-"main.dart.js": "3b9d5925bd8cc5c74e368ab85a6bf2bc",
-"manifest.json": "e53a9001284d89861d415b40a6f60ec4"
+"assets/NOTICES": "2cb062533fe16d5aab31ee59dfa69cc3",
+"main.dart.js": "aa43df4cf6d7c3dd2b447de658d8e3e9",
+"manifest.json": "dfaf84737f772bd339a73ae3bbfa7b01"
 };
 
 // The application shell files that are downloaded before a service worker can
