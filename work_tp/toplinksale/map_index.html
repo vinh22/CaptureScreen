@@ -1,46 +1,243 @@
-<!doctype html>
-<html lang="vi">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8" />
-    <!-- eKMap Platform JS -->
-    <script src='https://files.ekgis.vn/sdks/v2.0.0/ekmap-platform.min.js'></script>
-    <link href='https://files.ekgis.vn/sdks/v2.0.0/ekmap-platform.min.css' rel='stylesheet' />
-
-    <title>Base Map OSM Bright</title>
+    <title>Thêm điểm</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://files.ekgis.vn/sdks/v2.0.0/ekmap-platform.min.js"></script>
+    <link href="https://files.ekgis.vn/sdks/v2.0.0/ekmap-platform.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.2.2/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.2.2/ol.css">
     <style>
-        .map {
-            width: 100%;
-            height: calc(100vh - 15px);
-        }
-
         body {
-            overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
 
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background: #ddd;
+        }
+
+        .marker {
+            display: block;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+
+
+
+        }
+
+        .marker {
+            line-height: 12px;
+            font-size: 10px;
+            text-align: center;
+            color: #e81010;
+            /*If required*/
+            overflow: hidden
+        }
     </style>
 </head>
 
 <body>
-<div style="width: 100%;">
-    <div id="divMapId" class="map"></div>
-</div>
-<script>
 
+    <div id="map"></div>
+
+    <script>
         var lo = document.location.toString();
         var url = new URL(lo)
 
         var key = url.searchParams.get('key');
+        var dataSale = url.searchParams.get('datasale');
         var lat = url.searchParams.get('lat');
         var long = url.searchParams.get('long');
+        var dataSales = JSON.parse(`${dataSale}`);
 
+        const myArray = key.split("-");
         var map = new maplibregl.Map({
-            container: 'divMapId',center: [105, 17],
+            container: 'map',
+            center: [lat, long],
             zoom: 4
         });
-        var mapOSMBright = new ekmapplf.VectorBaseMap('OSM:Bright', key).addTo(map);
+        const geojson = {
+            'type': 'FeatureCollection',
+            'features': [
+                ...dataSales.map((element, i) => {
+                    console.log(element);
+                    map.loadImage(`${dataSales[i]['avt']}` + '#custom_marker', (error, image) => {
+                        if (error) throw error;
+                        if (!map.hasImage(`avt${i}`)) map.addImage(`avt${i}`, image,
+                            { pixelRatio: 1, },
+                        );
+                    });
+                    return ({
+                        'type': 'Feature',
+                        'properties': {
+                            'message': `${dataSales[i]['is_parent'] == 1 ? 'Giám sát' : 'sale'} ${element['name']}`,
+                            'iconSize': [30, 30]
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [element['lat'], element['lng'] + i / 5]
+                        }
+                    })
+                }),
+
+            ]
+        };
+        var i = 0;
+        for (const marker of geojson.features) {
+            // Create a DOM element for each marker.
+
+            // const el = document.createElement('div');
+            // const width = marker.properties.iconSize[0];
+            // const height = marker.properties.iconSize[1];
+            // el.className = 'marker';
+            // el.style.backgroundImage = `url(${dataSales[i]['avt']})`;
+            // el.style.width = `10%`;
+            // el.style.height = `10%`;
+            // el.style.backgroundSize = '100%';
+
+            // el.textContent = `${dataSales[i]['is_parent']==1?'Giám sát':'sale'}  ${dataSales[i]['name']}`;
+
+            // el.addEventListener('click', () => {
+            //     window.alert(marker.properties.message);
+            //     console.log("hehe");
+            //     document.getElementById("click2").click();
+            // });
+
+            // // Add markers to the map.
+
+            // new maplibregl.Marker(el)
+            //     .setLngLat(marker.geometry.coordinates)
+            //     .addTo(map);
+
+            i++;
+        }
+        /* Bản đồ nền */
+        console.log(myArray[0])
+        console.log(JSON.parse(`${myArray[0]}`))
+        var data = JSON.parse(`${myArray[0]}`)
+        var basemap = new ekmapplf.VectorBaseMap('OSM:Bright', 'ZGpF9y7Xuoq9aXMHlKftb2gIaW1fF1FEYvUTEEDR');
+        basemap.addTo(map);
+
+
+        async function getGeoJson() {
+            //   await  map.loadImage('https://api.metap.vn/images/thumb-028473-1642499172608.jpg', (error, image) => {
+            //         if (error) throw error;
+            //         if (!map.hasImage('harbor-15')) map.addImage('harbor-15', image);
+            //     });
+            await map.loadImage('https://api.metap.vn/images/thumb-028473-1642499172608.jpg' + '#custom_marker', (error, image) => {
+                if (error) throw error;
+                if (!map.hasImage('harbor-15')) map.addImage('harbor-15', image,
+                    { pixelRatio: 1, },
+                );
+            });
+
+        }
+
+        getGeoJson().then(() => {
+            console.log("haha");
+        });
+        map.on('load', () => {
+            map.addSource('points', {
+
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        ...dataSales.map((element, i) => {
+                            console.log(element);
+                            return ({
+                                'type': 'Feature',
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [element['lat'], element['lng']]
+                                },
+                                'properties': {
+                                    "prop0": "value0",
+                                    'title': 'vtmapgl',
+                                    'icon': 'harbor'
+                                }
+                            })
+                        })
+                        // ...myArray.map((e) => {
+                        //     // var item = JSON.parse(`${e}`)
+
+                        //     return ({
+                        //         'type': 'Feature',
+                        //         'geometry': {
+                        //             'type': 'Point',
+                        //             'coordinates': [item[0]['lat'], item[0]['long']]
+                        //         },
+                        //         'properties': {
+                        //             "prop0": "value0",
+                        //             'title': 'vtmapgl',
+                        //             'icon': 'harbor'
+                        //         }
+                        //     })
+                        // })
+                    ]
+                }
+            });
+            dataSales.forEach((element, i) => {
+                
+                map.addSource(`${i}`, {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [element['lat'], element['lng']],
+                                },
+
+                            }
+                        ]
+                    }
+                });
+                
+                map.addLayer({
+                    'id': `${i}`,
+                    'type': 'symbol',
+                    'source':  `${i}`,
+
+                    'layout': {
+                        'icon-image': `avt${i}`,
+
+                        'icon-size': 0.1,
+
+                        'text-field': `${element['is_parent']==1?'Giám sát':'sale'} ${element['name']}`,
+                        'text-offset': [0, 1.25],
+                        'text-anchor': 'top',
+                        'text-size': 12,
+                        'text-max-width': 10,
+                        'text-line-height': 1.2,
+                        ////
+
+                    },
+                    'paint': {
+                        'text-color': '#E95C16',
+                        'text-halo-color': '#fff',
+                        'text-halo-width': 2,
+
+                    },
+
+                });
+                
+            });
+          
+        });
     </script>
+
+
 </body>
+
 </html>
