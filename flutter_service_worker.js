@@ -111,16 +111,17 @@ const RESOURCES = {
 "wait.jpeg": "d73c497c2a75b90278013b2a9001f3a0",
 "loading.gif": "a6cd4c512234b8b546bf806d19cbba5c",
 "assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
-"assets/AssetManifest.json": "53ec6ae163e3cd565adb86caf430f5dc",
+"assets/AssetManifest.json": "542378261c3b81bbaff2c0454a2782f9",
 "assets/packages/firebase_ui_auth/fonts/SocialIcons.ttf": "a1207fae1578da27a062cb73d424aed9",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/assets/fonts/CascadiaMonoPL.ttf": "ef6ad3147eb7345ef494203a0012679f",
 "assets/assets/fonts/CascadiaMonoPLItalic.ttf": "eb50f42ed424ae992b4ab84be47f1465",
 "assets/assets/json/configure.json": "efb8eadd38ad8214e6f501b60025de8b",
 "assets/assets/images/loading.gif": "4e80f86919b04422d853db8acd99a063",
+"assets/assets/images/logo_full.png": "622ed31aed700d605a4132207bece8cc",
 "assets/FontManifest.json": "125864ff9501eed6694f4328b161bd96",
 "assets/NOTICES": "ecf46608379bac5fe528ab7df5281965",
-"main.dart.js": "e0965180fa41be073b66432e824d5d75",
+"main.dart.js": "d3b17ffa80ade0b8deec7ded73817453",
 "manifest.json": "dfaf84737f772bd339a73ae3bbfa7b01"
 };
 
