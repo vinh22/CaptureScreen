@@ -37,9 +37,10 @@
             line-height: 12px;
             font-size: 10px;
             text-align: center;
-            color: #e81010;
+            color: #150202;
             /*If required*/
-            overflow: hidden
+            overflow: hidden;
+            position: absolute;
         }
     </style>
 </head>
@@ -62,7 +63,7 @@
         var map = new maplibregl.Map({
             container: 'map',
             center: [lat, long],
-            zoom: 4
+            zoom: 7
         });
         const geojson = {
             'type': 'FeatureCollection',
@@ -186,7 +187,7 @@
                 }
             });
             dataSales.forEach((element, i) => {
-                
+
                 map.addSource(`${i}`, {
                     'type': 'geojson',
                     'data': {
@@ -194,6 +195,11 @@
                         'features': [
                             {
                                 'type': 'Feature',
+                                'properties': {
+                                    'title': 'vtmapgl',
+                                    'icon': 'theatre',
+                                    'description': '<strong>'+ element['name']+'</strong>'+'<Br/>'+'Đơn hàng : 0 '+'<Br/>'+'Tổng doanh thu : 0'+'<Br/>'+' kpi hôm nay : ...'
+                                },
                                 'geometry': {
                                     'type': 'Point',
                                     'coordinates': [element['lng'], element['lat']],
@@ -203,18 +209,19 @@
                         ]
                     }
                 });
-                
+
                 map.addLayer({
                     'id': `${i}`,
                     'type': 'symbol',
-                    'source':  `${i}`,
+                    'source': `${i}`,
 
                     'layout': {
                         'icon-image': `avt${i}`,
-
                         'icon-size': 0.1,
-
-                        'text-field': `${element['is_parent']==1?'Giám sát':'sale'} ${element['name']}`,
+                        'icon-optional': true,
+                        'icon-allow-overlap': true,
+                        'text-allow-overlap': true,
+                        'text-field': `${element['is_parent'] == 1 ? 'Giám sát' : 'sale'} ${element['name']}`,
                         'text-offset': [0, 1.25],
                         'text-anchor': 'top',
                         'text-size': 12,
@@ -231,9 +238,25 @@
                     },
 
                 });
-                
+                map.on('click',  `${i}`, (e) => {
+                    // Copy coordinates array.
+                    const coordinates = e.features[0].geometry.coordinates.slice();
+                    const description = e.features[0].properties.description;
+
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                    new maplibregl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(description)
+                        .addTo(map);
+                });
             });
-          
+
         });
     </script>
 
