@@ -94,7 +94,7 @@ const RESOURCES = {
 "work_tp/toplinksale/www/assets/NOTICES": "243c460924186536f983ca83ca68eff8",
 "work_tp/toplinksale/www/main.dart.js": "97a4a45ae314e21cb4c9579fb738d3b7",
 "work_tp/toplinksale/www/manifest.json": "1d21a390ac8efb04bb2c350761467514",
-"work_tp/toplinksale/map_index.html": "c0fa8776dbbded0fc902e2336ce74069",
+"work_tp/toplinksale/map_index.html": "0fc912fc903a3ef3395b18163e1a77c0",
 "work_tp/mts/bank_callback.html": "8b1551cc220e9a3ba74c442432f57d7e",
 "work_tp/mts/captcha.html": "690b93cc380397b72b2a1163c4154e6c",
 "work_tp/mts/captchav3.html": "32f789047e53f9437a3b35cd13c372ac",
@@ -121,7 +121,7 @@ const RESOURCES = {
 "assets/assets/images/logo_full.png": "622ed31aed700d605a4132207bece8cc",
 "assets/FontManifest.json": "125864ff9501eed6694f4328b161bd96",
 "assets/NOTICES": "ecf46608379bac5fe528ab7df5281965",
-"main.dart.js": "d3b17ffa80ade0b8deec7ded73817453",
+"main.dart.js": "c20ed331f3471c209351842ec7fed81b",
 "manifest.json": "dfaf84737f772bd339a73ae3bbfa7b01"
 };
 
