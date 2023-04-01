@@ -198,7 +198,7 @@
                                 'properties': {
                                     'title': 'vtmapgl',
                                     'icon': 'theatre',
-                                    'description': '<strong>'+ element['name']+'</strong>'+'<Br/>'+'Đơn hàng : 0 '+'<Br/>'+'Tổng doanh thu : 0'+'<Br/>'+' kpi hôm nay : ...'
+                                    'description': '<strong>'+ element['name']+'</strong>'+'<Br/>'+'Đơn hàng : 0 '+'<Br/>'+'Tổng doanh thu : 0'+'<Br/>'+' Trạng thái :'+'<strong>'+ element['status']+'</strong>'
                                 },
                                 'geometry': {
                                     'type': 'Point',
@@ -221,7 +221,7 @@
                         'icon-optional': true,
                         'icon-allow-overlap': true,
                         'text-allow-overlap': true,
-                        'text-field': `${element['is_parent'] == 1 ? 'Giám sát' : 'sale'} ${element['name']}`,
+                        'text-field': `${element['name']}`, // `${element['is_parent'] == 1 ? 'Giám sát' : 'sale'} ${element['name']}`,
                         'text-offset': [0, 1.25],
                         'text-anchor': 'top',
                         'text-size': 12,
@@ -231,7 +231,7 @@
 
                     },
                     'paint': {
-                        'text-color': '#E95C16',
+                        'text-color':`${element['status']=='NEW'?'#DF5E36':element['status']=='CHECKIN'?'#23EDED':element['status']=='CHECKOUT'?'#96E14A':'#FA0B0B'}` ,
                         'text-halo-color': '#fff',
                         'text-halo-width': 2,
 
