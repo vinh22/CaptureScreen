@@ -62,8 +62,8 @@
         const myArray = key.split("-");
         var map = new maplibregl.Map({
             container: 'map',
-            center: [lat, long],
-            zoom: 7
+            center: [long, lat],
+            zoom: 8
         });
         const geojson = {
             'type': 'FeatureCollection',
@@ -187,7 +187,14 @@
                 }
             });
             dataSales.forEach((element, i) => {
-
+                var imgs = '';
+                console.log(element['images'])
+                element['images'].forEach((e, j) => {
+                  
+                    var url =`https://media-daithuan.newweb.vn/file/${e['id']}`;
+                    console.log(url)
+                 imgs+=`<img src=${url} alt="" width="30" height="30"> `;
+                })
                 map.addSource(`${i}`, {
                     'type': 'geojson',
                     'data': {
@@ -198,7 +205,7 @@
                                 'properties': {
                                     'title': 'vtmapgl',
                                     'icon': 'theatre',
-                                    'description': '<strong>'+ element['name']+'</strong>'+'<Br/>'+'Đơn hàng : 0 '+'<Br/>'+'Tổng doanh thu : 0'+'<Br/>'+' Trạng thái :'+'<strong>'+ element['status']+'</strong>'
+                                    'description': '<strong>'+ element['name']+'</strong>'+'<Br/>'+imgs+'<Br/>'+' Trạng thái :'+'<strong>'+ element['status']+'</strong>'
                                 },
                                 'geometry': {
                                     'type': 'Point',
