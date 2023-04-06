@@ -42,14 +42,57 @@
             overflow: hidden;
             position: absolute;
         }
+
+        #info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 4px;
+            background: rgba(0,0,0,0.5);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 12px;
+            width: 200px;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div id="map"></div>
+    <div id="map">
 
+    </div>
+    <div id="info">
+        <table>
+            <tr>
+                <td><img src="https://media.newweb.vn/file/fPUBghG4N/w200-h200" alt="" width="30" height="30">
+                </td>
+                <td style="color: #F5F1EF;font-weight: bold;">Icon vị trí của sale</td>
+            </tr>
+            <tr>
+                <td><img src="https://media-daithuan.newweb.vn/file/d9hTfwCa0/w200-h200" alt="" width="30" height="30">
+                </td>
+                <td style="color: #F5F1EF;font-weight: bold;">Icon điểm bán</td>
+            </tr>
+            <tr>
+                <td><img src="https://media-daithuan.newweb.vn/file/d9hTfwCa0/w200-h200" alt="" width="30" height="30">
+                </td>
+                <td style="color: #DF5E36;font-weight: bold;">Chưa viếng thăm</td>
+            </tr>
+            <tr>
+                <td><img src="https://media-daithuan.newweb.vn/file/d9hTfwCa0/w200-h200" alt="" width="30" height="30">
+                </td>
+                <td  style="color: #23EDED;font-weight: bold;">Đang Check-In</td>
+            </tr>
+            <tr>
+                <td><img src="https://media-daithuan.newweb.vn/file/d9hTfwCa0/w200-h200" alt="" width="30" height="30">
+                </td>
+                <td  style="color: #96E14A;font-weight: bold;">Đã hoàn thành</td>
+            </tr>
+        </table>
+    </div>
     <script>
+        //  $("div#info").html("<p>All new content. <em>You bet!</em></p>");
         var lo = document.location.toString();
         var url = new URL(lo)
 
@@ -63,7 +106,7 @@
         var map = new maplibregl.Map({
             container: 'map',
             center: [long, lat],
-            zoom: 8
+            zoom: 15
         });
         const geojson = {
             'type': 'FeatureCollection',
@@ -190,10 +233,14 @@
                 var imgs = '';
                 console.log(element['images'])
                 element['images'].forEach((e, j) => {
-                  
-                    var url =`https://media-daithuan.newweb.vn/file/${e['id']}`;
+
+                    var url = `https://media-daithuan.newweb.vn/file/${e['id']}`;
                     console.log(url)
-                 imgs+=`<img src=${url} alt="" width="30" height="30"> `;
+                   if(element['tyoe']=='store'){
+                    imgs += `<img src="${url}" style="width: 150px;height: 150px;"/>`
+                   }else{
+                    imgs += `<img src=${url} alt="" width="100" height="100"> `;
+                   }
                 })
                 map.addSource(`${i}`, {
                     'type': 'geojson',
@@ -205,7 +252,7 @@
                                 'properties': {
                                     'title': 'vtmapgl',
                                     'icon': 'theatre',
-                                    'description': '<strong>'+ element['name']+'</strong>'+'<Br/>'+imgs+'<Br/>'+' Trạng thái :'+'<strong>'+ element['status']+'</strong>'
+                                    'description': '<strong>' + element['name'] + '</strong>' + '<Br/>' + imgs + '<Br/>' + ' Trạng thái :' + '<strong>' + element['status'] + '</strong>'
                                 },
                                 'geometry': {
                                     'type': 'Point',
@@ -224,12 +271,12 @@
 
                     'layout': {
                         'icon-image': `avt${i}`,
-                        'icon-size': 0.1,
+                        'icon-size': element['type'] == 'store' ? 0.2 : 0.1,
                         'icon-optional': true,
                         'icon-allow-overlap': true,
                         'text-allow-overlap': true,
                         'text-field': `${element['name']}`, // `${element['is_parent'] == 1 ? 'Giám sát' : 'sale'} ${element['name']}`,
-                        'text-offset': [0, 1.25],
+                        'text-offset':element['type'] == 'store' ? [0, 2.25]:[0, 1.25],
                         'text-anchor': 'top',
                         'text-size': 12,
                         'text-max-width': 10,
@@ -238,14 +285,14 @@
 
                     },
                     'paint': {
-                        'text-color':`${element['status']=='NEW'?'#DF5E36':element['status']=='CHECKIN'?'#23EDED':element['status']=='CHECKOUT'?'#96E14A':'#FA0B0B'}` ,
+                        'text-color': `${element['status'] == 'NEW' ? '#DF5E36' : element['status'] == 'CHECKIN' ? '#23EDED' : element['status'] == 'CHECKOUT' ? '#96E14A' : '#FA0B0B'}`,
                         'text-halo-color': '#fff',
                         'text-halo-width': 2,
 
                     },
 
                 });
-                map.on('click',  `${i}`, (e) => {
+                map.on('click', `${i}`, (e) => {
                     // Copy coordinates array.
                     const coordinates = e.features[0].geometry.coordinates.slice();
                     const description = e.features[0].properties.description;
