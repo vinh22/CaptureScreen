@@ -39,7 +39,7 @@ const RESOURCES = {
 "addon/store-code-check/canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
 "addon/store-code-check/canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
 "addon/store-code-check/favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "0184c51e8cc2ce921527ed3cde981026",
+"main.dart.js": "2dd4ae84574a99c867f2d35a3599f4c6",
 "assets/packages/firebase_ui_auth/fonts/SocialIcons.ttf": "a1207fae1578da27a062cb73d424aed9",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/assets/json/configure.json": "efb8eadd38ad8214e6f501b60025de8b",
