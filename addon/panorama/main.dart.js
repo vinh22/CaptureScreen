@@ -57372,11 +57372,11 @@ r=A.yM(q,A.MY(A.uc(c,q,q,q),q,q),q,new A.eY(B.ed,q,q,r,q,q,B.aO),q,new A.aV(4,4,
 return A.ab8(A.a([new A.E2(b,q,q,q,p,B.A,q,!1,q,s,q),r],t.D),B.kE,B.qb,B.qd)},
 F8(a,b){return this.q_(a,b,null)},
 O(a){var s,r=this,q=null,p="Next scene",o=B.f.dc(r.r,3),n=r.gXG(),m=t.Fv
-switch(o){case 0:s=A.a8O(1,A.AF("assets/panorama.jpg"),B.rQ,1,1,A.a([new A.j2(-15,-129,90,75,r.q_(B.xu,new A.a3y(r),p)),new A.j2(-42,-46,60,60,r.F8(B.kY,new A.a3z(r))),new A.j2(-33,123,60,60,r.F8(B.xs,new A.a3A(a)))],m),new A.a3B(),new A.a3C(),new A.a3D(),new A.a3E(),n,B.j7)
+switch(o){case 0:s=A.a8O(0,A.AF("assets/panorama.jpg"),B.rQ,1,1,A.a([new A.j2(-15,-129,90,75,r.q_(B.xu,new A.a3y(r),p)),new A.j2(-42,-46,60,60,r.F8(B.kY,new A.a3z(r))),new A.j2(-33,123,60,60,r.F8(B.xs,new A.a3A(a)))],m),new A.a3B(),new A.a3C(),new A.a3D(),new A.a3E(),n,B.j7)
 break
 case 2:s=A.a8O(1,A.AF("assets/panorama_cropped.jpg"),new A.y(2533,1265,7598,3798),5066,10132,A.a([new A.j2(0,-46,90,75,r.q_(B.kX,new A.a3F(r),p))],m),q,q,q,q,n,B.j7)
 break
-default:s=A.a8O(1,r.w[o],B.rQ,1,1,A.a([new A.j2(0,160,90,75,r.q_(B.kX,new A.a3G(r),p))],m),q,q,q,q,n,B.j7)}o=A.uc(r.a.c,q,q,q)
+default:s=A.a8O(0,r.w[o],B.rQ,1,1,A.a([new A.j2(0,160,90,75,r.q_(B.kX,new A.a3G(r),p))],m),q,q,q,q,n,B.j7)}o=A.uc(r.a.c,q,q,q)
 n=A.uc(B.c.P(r.d,3)+", "+B.c.P(r.e,3)+", "+B.c.P(r.f,3),q,q,q)
 m=r.r
 return new A.tz(new A.p7(o,new A.Ir(q,q,1/0,56),q),A.nw(B.b9,A.a([s,n,new A.EH(A.yM(q,A.uc("T\u1ea5m \u1ea3nh n\xe0y \u0111ang sai kh\xedch th\u01b0\u1edbc",q,q,q),B.c9,q,new A.aV(12,12,12,12),new A.aV(12,12,12,12),q),m===2,q)],t.D),B.bw),q)}}
