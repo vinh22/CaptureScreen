@@ -1,6 +1,6 @@
 {
-    "name": "web_ft_pdf_scanner",
-    "short_name": "web_ft_pdf_scanner",
+    "name": "store_scanner",
+    "short_name": "store_scanner",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
