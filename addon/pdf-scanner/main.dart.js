@@ -126086,9 +126086,9 @@ s=1
 break}if(!a4){m=J.a6(o)
 if(m.i(o,"po_number")==null)m.h(o,"po_number","0")}if(!a4){m=J.a6(o)
 if(m.i(o,"shipping_address")==null)m.h(o,"shipping_address","0")}if(!a4){m=J.a6(o)
-if(m.i(o,"sub_price")==null){k=m.i(o,"total_price")
-m.h(o,"sub_price",k==null?"0":k)}}if(!a4){m=J.a6(o)
-if(m.i(o,"total_price")==null){k=m.i(o,"sub_price")
+if(m.i(o,"sub_total")==null){k=m.i(o,"total_price")
+m.h(o,"sub_total",k==null?"0":k)}}if(!a4){m=J.a6(o)
+if(m.i(o,"total_price")==null){k=m.i(o,"sub_total")
 m.h(o,"total_price",k)}}if(!a4){m=J.a6(o)
 if(m.i(o,"discount")==null)m.h(o,"discount","00")}if(!a4){m=J.a6(o)
 if(m.i(o,"vat")==null)m.h(o,"vat","00")}if(!a4){m=J.a6(o)
@@ -126098,12 +126098,12 @@ else{k=J.aF(k)
 k=A.aq(k," ","")
 k=A.aq(k,".","")
 k=A.aq(k,",","")}m.h(o,"total_price",k==null?"0":k)}if(!a4){m=J.a6(o)
-k=m.i(o,"sub_price")
+k=m.i(o,"sub_total")
 if(k==null)k=null
 else{k=J.aF(k)
 k=A.aq(k," ","")
 k=A.aq(k,".","")
-k=A.aq(k,",","")}m.h(o,"sub_price",k==null?"0":k)}if(!a4){m=J.a6(o)
+k=A.aq(k,",","")}m.h(o,"sub_total",k==null?"0":k)}if(!a4){m=J.a6(o)
 k=m.i(o,"discount")
 if(k==null)k=null
 else{k=J.aF(k)
@@ -126189,8 +126189,10 @@ if(h==null)h=null
 else{h=J.aF(h)
 h=A.aq(h," ","")
 h=A.aq(h,".","")
-h=A.aq(h,",","")}f=h}}h=m.i(o,"sku_ou")
-e=B.b.c7(h==null?"1":h)
+h=A.aq(h,",","")}f=h}}h=m.i(o,"details")
+if(h==null)h=null
+else{h=J.Y(h,i)
+h=h==null?null:J.Y(h,"sku_ou")}e=B.b.c7(h==null?"1":h)
 h=A.hb(e,null)
 d=h==null?A.bu(e):h
 if(d==null)d=1
@@ -126956,7 +126958,7 @@ return A.UR(A.a6E(r,B.VB),A.ahR(A.b([A.aID(new A.an5(),new A.an6(s),t.N),new A.f
 A.an6.prototype={
 $1(a){var s,r=this.a,q=r.d
 q.fm(0,a)
-s=A.b(["po_number","shipping_address","total_price","vat","customer_code","customer_name","saleman_code","details","product_code","qty","sku_ou","discount","price","total"],t.s)
+s=A.b(["po_number","shipping_address","total_price","sub_total","vat","customer_code","customer_name","saleman_code","details","product_code","qty","sku_ou","discount","price","total"],t.s)
 if(!B.c.u(s,q.a.a)&&B.b.c7(q.a.a).length!==0)s.push(q.a.a)
 return new A.b2(s,new A.an4(r),t.He)},
 $S:584}
