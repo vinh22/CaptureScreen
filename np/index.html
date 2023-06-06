@@ -78,14 +78,12 @@
     <script>
         var lo = document.location.toString(); // http://localhost:9815/flutter_assets/mastercard_callback.html?code=DH20221017009&price=20,040,000%C4%91&payment_method=Thanh%20to%C3%A1n%20qua%20th%E1%BA%BB%20t%C3%ADn%20d%E1%BB%A5ng/th%E1%BA%BB%20ghi%20n%E1%BB%A3%20qu%E1%BB%91c%20t%E1%BA%BF&order_id=11326&status=fail
         var url = new URL(lo)
-        var name = url.searchParams.get('website'); // DH20221017006
-
-        var name = url.searchParams.get('name');
-        var subtite = url.searchParams.get('subtite');
-        var phone = url.searchParams.get('phone');
-        var email = url.searchParams.get('email');
-        var website = url.searchParams.get('website');
-        var website2 = url.searchParams.get('website2');
+        var name = url.searchParams.get('n');
+        var subtite = url.searchParams.get('s');
+        var phone = url.searchParams.get('p');
+        var email = url.searchParams.get('e');
+        var website = url.searchParams.get('w');
+        var website2 = url.searchParams.get('w2');
 
         document.getElementById('name').innerText = name;
         document.getElementById('subtite').innerText = subtite;
