@@ -35,13 +35,24 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '3560292284';
+    var serviceWorkerVersion = '1846947844';
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
-<body>
+<body id="body">
   <script>
+    var hre = window.location.href;
+    if(hre.includes('/token.')) {
+      var newHre = hre.substring(0,hre.lastIndexOf('/token.'));
+      var token = hre.substring(hre.lastIndexOf('/token.') + '/token.'.length)
+      localStorage.setItem('jwt', token);
+      var body = document.getElementById('body')
+      body.setAttribute('jwt', token);
+       window.location.href = newHre;
+    }
+
+
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
